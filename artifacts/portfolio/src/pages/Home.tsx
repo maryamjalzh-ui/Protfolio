@@ -46,7 +46,8 @@ export default function Home() {
   const [pediLightbox, setPediLightbox] = useState<number | null>(null);
   const [haikLightbox, setHaikLightbox] = useState<number | null>(null);
   const [fdsLightbox, setFdsLightbox] = useState<number | null>(null);
-  const fdsPreviews = ["/fds-preview-1.jpeg", "/fds-preview-2.jpeg"];
+  const base = import.meta.env.BASE_URL;
+  const fdsPreviews = [`${base}fds-preview-1.jpeg`, `${base}fds-preview-2.jpeg`];
 
   return (
     <main className="min-h-[100dvh] w-full bg-background text-foreground overflow-x-hidden selection:bg-primary/20 selection:text-primary">
@@ -371,7 +372,7 @@ export default function Home() {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/20 transition-all"></div>
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-14 h-14 rounded-xl bg-white flex items-center justify-center flex-shrink-0 shadow-sm border border-border/30 p-1.5">
-                    <img src="/logo-exp1.png" alt="Saudi Binladin Group" className="w-full h-full object-contain" />
+                    <img src={`${base}logo-exp1.png`} alt="Saudi Binladin Group" className="w-full h-full object-contain" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-foreground leading-snug">Data Analyst</h3>
@@ -415,7 +416,7 @@ export default function Home() {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/10 transition-all"></div>
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-14 h-14 rounded-xl bg-white flex items-center justify-center flex-shrink-0 shadow-sm border border-border/30 p-1.5">
-                    <img src="/logo-aramco.png" alt="Saudi Aramco" className="w-full h-full object-contain" />
+                    <img src={`${base}logo-aramco.png`} alt="Saudi Aramco" className="w-full h-full object-contain" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-foreground leading-snug">Data Analyst Intern</h3>
@@ -546,7 +547,7 @@ export default function Home() {
               {/* Logo header — same structure as other cards */}
               <div className="flex flex-col items-center justify-center gap-4 px-8 pt-8 pb-4 bg-gradient-to-b from-white/10 to-transparent">
                 <div className="w-24 h-24 rounded-[22%] bg-white flex items-center justify-center shadow-lg border border-border/20 p-2 drop-shadow-lg">
-                  <img src="/logo-exp1.png" alt="Saudi Binladin Group" className="w-full h-full object-contain" />
+                  <img src={`${base}logo-exp1.png`} alt="Saudi Binladin Group" className="w-full h-full object-contain" />
                 </div>
                 {/* Spacer matches Haik's App Store button height */}
                 <div className="h-10" />
@@ -610,7 +611,7 @@ export default function Home() {
               {/* Logo header */}
               <div className="flex flex-col items-center justify-center gap-4 px-8 pt-8 pb-4 bg-gradient-to-b from-white/10 to-transparent">
                 <img
-                  src="/pediderm-logo.svg"
+                  src={`${base}pediderm-logo.svg`}
                   alt="PediDermScan Logo"
                   className="w-24 h-24 object-cover drop-shadow-lg"
                   style={{ borderRadius: "22%" }}
@@ -623,10 +624,10 @@ export default function Home() {
               <div className="relative">
                 <div className="flex gap-3 overflow-x-auto px-4 pb-4 pt-2" style={{ scrollbarWidth: "none" }}>
                 {[
-                  { src: "/pediderm-landing.jpeg", label: "Landing" },
-                  { src: "/pediderm-dashboard.jpeg", label: "Dashboard" },
-                  { src: "/pediderm-scan.jpeg", label: "Scan Result" },
-                  { src: "/pediderm-admin.jpeg", label: "Admin Panel" },
+                  { src: `${base}pediderm-landing.jpeg`, label: "Landing" },
+                  { src: `${base}pediderm-dashboard.jpeg`, label: "Dashboard" },
+                  { src: `${base}pediderm-scan.jpeg`, label: "Scan Result" },
+                  { src: `${base}pediderm-admin.jpeg`, label: "Admin Panel" },
                 ].map((item, i) => (
                   <button
                     key={i}
@@ -691,7 +692,7 @@ export default function Home() {
                 <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full blur-2xl"></div>
                 <div className="flex items-start gap-4 mb-3">
                   <div className="w-14 h-14 rounded-xl bg-white flex items-center justify-center flex-shrink-0 shadow-sm border border-border/30 p-1.5">
-                    <img src="/logo-tuwaiq.png" alt="Tuwaiq Apple Developer Academy" className="w-full h-full object-contain" />
+                    <img src={`${base}logo-tuwaiq.png`} alt="Tuwaiq Apple Developer Academy" className="w-full h-full object-contain" />
                   </div>
                   <div>
                     <h3 className="font-bold text-lg leading-snug">Apple Developer Academy</h3>
@@ -710,7 +711,7 @@ export default function Home() {
               >
                 <div className="flex items-start gap-4 mb-3">
                   <div className="w-14 h-14 rounded-xl bg-white flex items-center justify-center flex-shrink-0 shadow-sm border border-border/30 p-1.5">
-                    <img src="/logo-kku.png" alt="King Khalid University" className="w-full h-full object-contain" />
+                    <img src={`${base}logo-kku.png`} alt="King Khalid University" className="w-full h-full object-contain" />
                   </div>
                   <div>
                     <h3 className="font-bold text-lg leading-snug">Bachelor of Computer Science</h3>
@@ -844,10 +845,10 @@ export default function Home() {
       {/* PediDerm Image Lightbox */}
       {(() => {
         const pediImages = [
-          { src: "/pediderm-landing.jpeg", label: "Landing" },
-          { src: "/pediderm-dashboard.jpeg", label: "Dashboard" },
-          { src: "/pediderm-scan.jpeg", label: "Scan Result" },
-          { src: "/pediderm-admin.jpeg", label: "Admin Panel" },
+          { src: `${base}pediderm-landing.jpeg`, label: "Landing" },
+          { src: `${base}pediderm-dashboard.jpeg`, label: "Dashboard" },
+          { src: `${base}pediderm-scan.jpeg`, label: "Scan Result" },
+          { src: `${base}pediderm-admin.jpeg`, label: "Admin Panel" },
         ];
         return (
           <AnimatePresence>
