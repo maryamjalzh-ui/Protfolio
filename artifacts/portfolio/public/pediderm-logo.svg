@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" rx="42" fill="white"/>
+  <!--
+    "d" bowl: center (82, 82), r=28, spine x=104
+    intersection y = 82 ± sqrt(784-484) = 82 ± 17.3 → top=64.7, bot=99.3
+    Large CCW arc (sweep=0): from top (104,65) around LEFT side to bot (104,99)
+
+    "p" bowl: center (118,118), r=28, spine x=104
+    intersection y = 118 ± sqrt(784-196) = 118 ± 24.2 → top=93.8, bot=142.2
+    Large CW arc (sweep=1): from top (104,94) around RIGHT side to bot (104,142)
+
+    Spine: x=104, y=52→152
+  -->
+  <g fill="none" stroke="#6BAAA4" stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
+    <!-- "d" bowl — large arc, counterclockwise, around the left -->
+    <path d="M 104,65 A 28,28 0 1 0 104,99"/>
+    <!-- "p" bowl — large arc, clockwise, around the right -->
+    <path d="M 104,94 A 28,28 0 1 1 104,142"/>
+    <!-- shared spine -->
+    <line x1="104" y1="52" x2="104" y2="152"/>
+  </g>
+</svg>
